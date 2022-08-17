@@ -42,11 +42,15 @@
         }
     </style>
     <script> (function f() { var widget_key = '09632e7534993dbf3730ad30c3380add'; window.leadCM = { widget_key: widget_key, }; var em = document.createElement('script'); em.type = 'text/javascript'; em.async = true; em.src = 'https://app.convolo.ai/js/icallback.js?v=' + Math.random() + '&key=' + widget_key + '&uri=' + encodeURIComponent(window.location.href); var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(em, s); })(); </script>
+    <script> (function f() { var em = document.createElement('script'); em.type = 'text/javascript'; em.async = true; em.src = 'index.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(em, s); })(); </script>
 </head>
 <body>
 <div class="app">
     <main>
         <h1>16.08</h1>
+        <input id="field-number-phone">
+        <input id="country_code">
+        <a href="convolo:+79175576781?pipedrive-domain=name-of-project">link consito</a>
         <h2>What is Lorem Ipsum?</h2>
         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
             industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
@@ -141,5 +145,15 @@
         s.parentNode.insertBefore(em, s);
     })();
 </script>
+<script defer src="index.js"></script>
+<!--<script type="application/javascript">-->
+<!--    function geoip(json){-->
+<!--        var userip      = document.getElementById("user_ip");-->
+<!--        var countrycode = document.getElementById("user_countrycode");-->
+<!--        userip.textContent      = json.ip;-->
+<!--        countrycode.textContent = json.country_code;-->
+<!--    }-->
+<!--</script>-->
+<!--<script async src="http://api.ipstack.com/134.201.250.155?access_key=20419e55b925dccd82a0e3cdbcbdbfc4"></script>-->
 </body>
 </html>
