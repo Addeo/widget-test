@@ -42,18 +42,10 @@
         }
     </style>
     <script> (function f() { var widget_key = '80cdc272581928b47064964cd7d9fa50'; window.leadCM = { widget_key: widget_key, }; var em = document.createElement('script'); em.type = 'text/javascript'; em.async = true; em.src = 'https://app.convolo.ai/js/icallback.js?v=' + Math.random() + '&key=' + widget_key + '&uri=' + encodeURIComponent(window.location.href); var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(em, s); })(); </script>
-    <script> (function f() { var em = document.createElement('script'); em.type = 'text/javascript'; em.async = true; em.src = 'index.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(em, s); })(); </script>
 </head>
 <body>
 <div class="app">
     <main>
-        <h1>19.09</h1>
-        <input id="field-number-phone">
-        <input id="country_code">
-        <a href="convolo:+876876687?pipedrive-domain=name-of-project">link name-of-project</a>
-        <a href="convolo:+76868867?pipedrive-domain=test">link test</a>
-        <a href="convolo:+76868867?pipedrive-domain=ADD%20TEST">link ADD%20TEST</a>
-        <a href="convolo:+76868867?pipedrive-domain=ADD TEST">link ADD TEST</a>
         <h2>What is Lorem Ipsum?</h2>
         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
             industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
@@ -75,88 +67,5 @@
         <button>OPEN</button>
     </main>
 </div>
-<script>
-    (function f() {
-        // если только локально сделать true
-        const ONLY_LOCAL = false;
-        const USE_TEST_SETTINGS = false;
-        const NO_REAL_CALLS = false;
-
-        // будет использоваться тестовое окружение если не ONLY_LOCAL
-        let widget_key = "80cdc272581928b47064964cd7d9fa50";
-        let base_url = "https://app.convolo.ai";
-
-        // start for test page
-        const lc_widget_key = window.location.search ?
-            window.location.search.match(/lc_widget_key=([^&]+)/) ?
-                window.location.search.match(/lc_widget_key=([^&]+)/)[1]
-                : null : null;
-        if (lc_widget_key) widget_key = lc_widget_key;
-
-
-        const lc_url = window.location.search ?
-            window.location.search.match(/lc_url=([^&]+)/) ?
-                window.location.search.match(/lc_url=([^&]+)/)[1]
-                : null : null;
-
-        if (lc_url) base_url = lc_url;
-
-        // noConsole console.log(base_url);
-
-        const leadCM = {
-            widget_key: widget_key,
-            visit_id: "",
-            // when defaults aren't set
-            settings_url: base_url + '/api/v1/ext/widget-settings/' + widget_key,
-            submit_url: base_url + '/api/v1/ext/add-call/',
-            time_available_url: base_url + '/api/v1/ext/widget-get-time-available/' + widget_key,
-            register_url: base_url + '/api/v1/ext/register-event/',
-            use_test_settings: USE_TEST_SETTINGS,
-            only_local: ONLY_LOCAL,
-            no_real_calls: NO_REAL_CALLS,
-            start_opened: false,
-        };
-
-        if (!widget_key && !leadCM.use_test_settings) return;
-        // end for test page
-
-        if (window.location.search && window.location.search.match(/testPage=1/)) {
-            leadCM.start_opened = true;
-            leadCM.use_test_settings = false;
-        }
-
-        // start for chrome extension
-        const el = document.createElement('meta');
-        el.id = "leadCM_meta";
-        el.name = "leadCM_meta";
-        el.content = JSON.stringify(leadCM);
-        // noinspection JSCheckFunctionSignatures
-        document.head.appendChild(el);
-        // end for chrome extension
-
-        window.leadCM = leadCM;
-
-        const script_url = ONLY_LOCAL ? 'main.js' : base_url + '/js/icallback.js';
-
-        const em = document.createElement('script');
-        em.type = 'text/javascript';
-        em.async = true;
-        em.src = script_url + '?v=' + Math.random() + '&key=' + widget_key
-            + '&uri=' + encodeURIComponent(window.location.href);
-        const s = document.getElementsByTagName('script')[0];
-        // noinspection JSCheckFunctionSignatures
-        s.parentNode.insertBefore(em, s);
-    })();
-</script>
-<script defer src="index.js"></script>
-<!--<script type="application/javascript">-->
-<!--    function geoip(json){-->
-<!--        var userip      = document.getElementById("user_ip");-->
-<!--        var countrycode = document.getElementById("user_countrycode");-->
-<!--        userip.textContent      = json.ip;-->
-<!--        countrycode.textContent = json.country_code;-->
-<!--    }-->
-<!--</script>-->
-<!--<script async src="http://api.ipstack.com/134.201.250.155?access_key=20419e55b925dccd82a0e3cdbcbdbfc4"></script>-->
 </body>
 </html>
